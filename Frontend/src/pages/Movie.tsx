@@ -45,7 +45,7 @@ function App() {
 
     try {
       const res = await axios.post<ApiResponse>(
-        "http://localhost:5000/api/recommend",
+        "https://movierecommendation-1-n3x0.onrender.com/api/recommend",
         { userInput: userInput.trim().toLowerCase() }
       );
       console.log(userInput);
@@ -70,7 +70,7 @@ function App() {
   const saveRecommendations = async () => {
     try {
       
-      const res = await axios.post<ApiResponse>("http://localhost:5000/api/save",{ userInput: userInput.trim().toLowerCase(), recommendations: recommendations }
+      const res = await axios.post<ApiResponse>("https://movierecommendation-1-n3x0.onrender.com/api/save",{ userInput: userInput.trim().toLowerCase(), recommendations: recommendations }
       );
       
       if (res.data.success) {
